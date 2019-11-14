@@ -6,10 +6,12 @@
 
 #IncludeRegexTransform: 
 
-../include/my_vector.hpp
+../include/my_unique_ptr.hpp
 cstddef
 -
 algorithm
+-
+mutex
 -
 
 ../test_include/catch.hpp
@@ -582,9 +584,11 @@ algorithm
 cassert
 -
 
-/home/dmhacker/clubs/cpp-workshop-1/test/test_my_vector.cpp
+/home/dmhacker/clubs/tse/cpp-workshop-2/test/test_my_unique_ptr.cpp
 catch.hpp
-/home/dmhacker/clubs/cpp-workshop-1/test/catch.hpp
-my_vector.hpp
+/home/dmhacker/clubs/tse/cpp-workshop-2/test/catch.hpp
+my_unique_ptr.hpp
+-
+string
 -
 

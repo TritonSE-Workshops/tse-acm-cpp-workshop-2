@@ -1,1 +1,1 @@
-/usr/bin/c++   -std=c++11   CMakeFiles/tests.dir/test/main.cpp.o CMakeFiles/tests.dir/test/test_my_vector.cpp.o  -o tests 
+/usr/bin/c++   -std=c++11  -rdynamic CMakeFiles/tests.dir/test/main.cpp.o CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o  -o tests 

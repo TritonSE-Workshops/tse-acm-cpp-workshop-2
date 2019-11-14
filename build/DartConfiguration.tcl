@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/dmhacker/clubs/cpp-workshop-1
-BuildDirectory: /home/dmhacker/clubs/cpp-workshop-1/build
+SourceDirectory: /home/dmhacker/clubs/tse/cpp-workshop-2
+BuildDirectory: /home/dmhacker/clubs/tse/cpp-workshop-2/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -26,8 +26,8 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/dmhacker/clubs/cpp-workshop-1"
-MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/usr/bin/cmake" "/home/dmhacker/clubs/tse/cpp-workshop-2"
+MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
 # version control

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dmhacker/clubs/cpp-workshop-1
+CMAKE_SOURCE_DIR = /home/dmhacker/clubs/tse/cpp-workshop-2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dmhacker/clubs/cpp-workshop-1/build
+CMAKE_BINARY_DIR = /home/dmhacker/clubs/tse/cpp-workshop-2/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tests.dir/depend.make
@@ -59,45 +59,45 @@ include CMakeFiles/tests.dir/flags.make
 
 CMakeFiles/tests.dir/test/main.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/test/main.cpp.o: ../test/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/test/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/test/main.cpp.o -c /home/dmhacker/clubs/cpp-workshop-1/test/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/test/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/test/main.cpp.o -c /home/dmhacker/clubs/tse/cpp-workshop-2/test/main.cpp
 
 CMakeFiles/tests.dir/test/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/test/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dmhacker/clubs/cpp-workshop-1/test/main.cpp > CMakeFiles/tests.dir/test/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dmhacker/clubs/tse/cpp-workshop-2/test/main.cpp > CMakeFiles/tests.dir/test/main.cpp.i
 
 CMakeFiles/tests.dir/test/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dmhacker/clubs/cpp-workshop-1/test/main.cpp -o CMakeFiles/tests.dir/test/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dmhacker/clubs/tse/cpp-workshop-2/test/main.cpp -o CMakeFiles/tests.dir/test/main.cpp.s
 
-CMakeFiles/tests.dir/test/test_my_vector.cpp.o: CMakeFiles/tests.dir/flags.make
-CMakeFiles/tests.dir/test/test_my_vector.cpp.o: ../test/test_my_vector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tests.dir/test/test_my_vector.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/test/test_my_vector.cpp.o -c /home/dmhacker/clubs/cpp-workshop-1/test/test_my_vector.cpp
+CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o: ../test/test_my_unique_ptr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o -c /home/dmhacker/clubs/tse/cpp-workshop-2/test/test_my_unique_ptr.cpp
 
-CMakeFiles/tests.dir/test/test_my_vector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/test/test_my_vector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dmhacker/clubs/cpp-workshop-1/test/test_my_vector.cpp > CMakeFiles/tests.dir/test/test_my_vector.cpp.i
+CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dmhacker/clubs/tse/cpp-workshop-2/test/test_my_unique_ptr.cpp > CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.i
 
-CMakeFiles/tests.dir/test/test_my_vector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test/test_my_vector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dmhacker/clubs/cpp-workshop-1/test/test_my_vector.cpp -o CMakeFiles/tests.dir/test/test_my_vector.cpp.s
+CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dmhacker/clubs/tse/cpp-workshop-2/test/test_my_unique_ptr.cpp -o CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.s
 
 # Object files for target tests
 tests_OBJECTS = \
 "CMakeFiles/tests.dir/test/main.cpp.o" \
-"CMakeFiles/tests.dir/test/test_my_vector.cpp.o"
+"CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o"
 
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
 
 tests: CMakeFiles/tests.dir/test/main.cpp.o
-tests: CMakeFiles/tests.dir/test/test_my_vector.cpp.o
+tests: CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o
 tests: CMakeFiles/tests.dir/build.make
 tests: CMakeFiles/tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -D TEST_TARGET=tests -D TEST_EXECUTABLE=/home/dmhacker/clubs/cpp-workshop-1/build/tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/dmhacker/clubs/cpp-workshop-1/build -D TEST_SPEC= -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_LIST=tests_TESTS -D CTEST_FILE=/home/dmhacker/clubs/cpp-workshop-1/build/tests_tests-b858cb2.cmake -P /home/dmhacker/clubs/cpp-workshop-1/cmake/CatchAddTests.cmake
+	/usr/bin/cmake -D TEST_TARGET=tests -D TEST_EXECUTABLE=/home/dmhacker/clubs/tse/cpp-workshop-2/build/tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/dmhacker/clubs/tse/cpp-workshop-2/build -D TEST_SPEC= -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_LIST=tests_TESTS -D CTEST_FILE=/home/dmhacker/clubs/tse/cpp-workshop-2/build/tests_tests-b858cb2.cmake -P /home/dmhacker/clubs/tse/cpp-workshop-2/cmake/CatchAddTests.cmake
 
 # Rule to build all files generated by this target.
 CMakeFiles/tests.dir/build: tests
@@ -109,6 +109,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/dmhacker/clubs/cpp-workshop-1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dmhacker/clubs/cpp-workshop-1 /home/dmhacker/clubs/cpp-workshop-1 /home/dmhacker/clubs/cpp-workshop-1/build /home/dmhacker/clubs/cpp-workshop-1/build /home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dmhacker/clubs/tse/cpp-workshop-2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dmhacker/clubs/tse/cpp-workshop-2 /home/dmhacker/clubs/tse/cpp-workshop-2 /home/dmhacker/clubs/tse/cpp-workshop-2/build /home/dmhacker/clubs/tse/cpp-workshop-2/build /home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

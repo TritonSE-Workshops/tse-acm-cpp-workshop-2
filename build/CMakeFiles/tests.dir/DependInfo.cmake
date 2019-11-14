@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dmhacker/clubs/cpp-workshop-1/test/main.cpp" "/home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles/tests.dir/test/main.cpp.o"
-  "/home/dmhacker/clubs/cpp-workshop-1/test/test_my_vector.cpp" "/home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles/tests.dir/test/test_my_vector.cpp.o"
+  "/home/dmhacker/clubs/tse/cpp-workshop-2/test/main.cpp" "/home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles/tests.dir/test/main.cpp.o"
+  "/home/dmhacker/clubs/tse/cpp-workshop-2/test/test_my_unique_ptr.cpp" "/home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

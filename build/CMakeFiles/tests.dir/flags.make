@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/dmhacker/clubs/cpp-workshop-1/include -I/home/dmhacker/clubs/cpp-workshop-1/test_include 
+CXX_INCLUDES = -I/home/dmhacker/clubs/tse/cpp-workshop-2/include -I/home/dmhacker/clubs/tse/cpp-workshop-2/test_include 
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dmhacker/clubs/cpp-workshop-1
+CMAKE_SOURCE_DIR = /home/dmhacker/clubs/tse/cpp-workshop-2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dmhacker/clubs/cpp-workshop-1/build
+CMAKE_BINARY_DIR = /home/dmhacker/clubs/tse/cpp-workshop-2/build
 
 # Utility rule file for NightlyCoverage.
 
@@ -71,6 +71,6 @@ CMakeFiles/NightlyCoverage.dir/clean:
 .PHONY : CMakeFiles/NightlyCoverage.dir/clean
 
 CMakeFiles/NightlyCoverage.dir/depend:
-	cd /home/dmhacker/clubs/cpp-workshop-1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dmhacker/clubs/cpp-workshop-1 /home/dmhacker/clubs/cpp-workshop-1 /home/dmhacker/clubs/cpp-workshop-1/build /home/dmhacker/clubs/cpp-workshop-1/build /home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dmhacker/clubs/tse/cpp-workshop-2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dmhacker/clubs/tse/cpp-workshop-2 /home/dmhacker/clubs/tse/cpp-workshop-2 /home/dmhacker/clubs/tse/cpp-workshop-2/build /home/dmhacker/clubs/tse/cpp-workshop-2/build /home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/NightlyCoverage.dir/depend
 

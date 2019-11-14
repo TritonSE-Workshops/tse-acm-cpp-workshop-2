@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dmhacker/clubs/cpp-workshop-1
+CMAKE_SOURCE_DIR = /home/dmhacker/clubs/tse/cpp-workshop-2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dmhacker/clubs/cpp-workshop-1/build
+CMAKE_BINARY_DIR = /home/dmhacker/clubs/tse/cpp-workshop-2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles /home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles /home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmhacker/clubs/cpp-workshop-1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dmhacker/clubs/tse/cpp-workshop-2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -525,32 +525,32 @@ test/main.cpp.s:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/main.cpp.s
 .PHONY : test/main.cpp.s
 
-test/test_my_vector.o: test/test_my_vector.cpp.o
+test/test_my_unique_ptr.o: test/test_my_unique_ptr.cpp.o
 
-.PHONY : test/test_my_vector.o
+.PHONY : test/test_my_unique_ptr.o
 
 # target to build an object file
-test/test_my_vector.cpp.o:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test_my_vector.cpp.o
-.PHONY : test/test_my_vector.cpp.o
+test/test_my_unique_ptr.cpp.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o
+.PHONY : test/test_my_unique_ptr.cpp.o
 
-test/test_my_vector.i: test/test_my_vector.cpp.i
+test/test_my_unique_ptr.i: test/test_my_unique_ptr.cpp.i
 
-.PHONY : test/test_my_vector.i
+.PHONY : test/test_my_unique_ptr.i
 
 # target to preprocess a source file
-test/test_my_vector.cpp.i:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test_my_vector.cpp.i
-.PHONY : test/test_my_vector.cpp.i
+test/test_my_unique_ptr.cpp.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.i
+.PHONY : test/test_my_unique_ptr.cpp.i
 
-test/test_my_vector.s: test/test_my_vector.cpp.s
+test/test_my_unique_ptr.s: test/test_my_unique_ptr.cpp.s
 
-.PHONY : test/test_my_vector.s
+.PHONY : test/test_my_unique_ptr.s
 
 # target to generate assembly for a file
-test/test_my_vector.cpp.s:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test_my_vector.cpp.s
-.PHONY : test/test_my_vector.cpp.s
+test/test_my_unique_ptr.cpp.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.s
+.PHONY : test/test_my_unique_ptr.cpp.s
 
 # Help Target
 help:
@@ -593,9 +593,9 @@ help:
 	@echo "... test/main.o"
 	@echo "... test/main.i"
 	@echo "... test/main.s"
-	@echo "... test/test_my_vector.o"
-	@echo "... test/test_my_vector.i"
-	@echo "... test/test_my_vector.s"
+	@echo "... test/test_my_unique_ptr.o"
+	@echo "... test/test_my_unique_ptr.i"
+	@echo "... test/test_my_unique_ptr.s"
 .PHONY : help
 
 

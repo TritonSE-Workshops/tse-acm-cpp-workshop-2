@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/test/main.cpp.o"
-  "CMakeFiles/tests.dir/test/test_my_vector.cpp.o"
+  "CMakeFiles/tests.dir/test/test_my_unique_ptr.cpp.o"
   "tests"
   "tests.pdb"
   "tests_tests-b858cb2.cmake"
