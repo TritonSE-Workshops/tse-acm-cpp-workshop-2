@@ -17,7 +17,7 @@ namespace acmtse {
             /*
              * Default constructor
              */
-            my_unique_ptr() = default; // TODO: Add something here ...
+            my_unique_ptr() = default;
 
             /*
              * Explicit constructor, takes in a raw pointer that the
@@ -45,8 +45,8 @@ namespace acmtse {
              * and assignment operators because a unique pointer should not
              * be copyable or assignable.
              */
-            my_unique_ptr(const my_unique_ptr&) = delete; // TODO: Add something here ... 
-            my_unique_ptr& operator=(const my_unique_ptr& other) = delete; // TODO: Add something here ... 
+            my_unique_ptr(const my_unique_ptr&); // TODO: Add something here ... 
+            my_unique_ptr& operator=(const my_unique_ptr& other); // TODO: Add something here ... 
 
             /*
              * Returns the underlying raw pointer. Already implemented. 

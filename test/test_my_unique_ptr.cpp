@@ -11,10 +11,6 @@ TEST_CASE("Default constructor returns nullptr") {
     REQUIRE(ptr.get() == nullptr);
 }
 
-TEST_CASE("Constructor does not crash") {
-    my_unique_ptr<int> ptr(new int());  
-}
-
 TEST_CASE("Constructor stores pointer correctly") {
     int* data = new int(5);
     my_unique_ptr<int> ptr(data);  
@@ -49,4 +45,12 @@ TEST_CASE("Assignment through rvalue works correctly") {
     ptr2->push_back('2');
     REQUIRE(*ptr2 == "acmtse12");
     REQUIRE(ptr2->length() == 8);
+}
+
+TEST_CASE("Release gives up raw pointer ownership") {
+    int* data = new int(5);
+    my_unique_ptr<int> ptr(data);  
+    REQUIRE(data == ptr.release());
+    REQUIRE(ptr.get() == nullptr);
+    delete data;
 }
