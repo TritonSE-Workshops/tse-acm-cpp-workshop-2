@@ -1,0 +1,2 @@
+/usr/bin/ar qc libworkshop.a  CMakeFiles/workshop.dir/src/my_vector.cpp.o
+/usr/bin/ranlib libworkshop.a

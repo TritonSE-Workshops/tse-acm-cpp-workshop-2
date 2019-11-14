@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/dmhacker/clubs/cpp-workshop-1/build",
+  "command": "/usr/bin/c++   -I/home/dmhacker/clubs/cpp-workshop-1/include -I/home/dmhacker/clubs/cpp-workshop-1/test_include   -std=c++11   -std=gnu++11 -o CMakeFiles/tests.dir/test/main.cpp.o -c /home/dmhacker/clubs/cpp-workshop-1/test/main.cpp",
+  "file": "/home/dmhacker/clubs/cpp-workshop-1/test/main.cpp"
+},
+{
+  "directory": "/home/dmhacker/clubs/cpp-workshop-1/build",
+  "command": "/usr/bin/c++   -I/home/dmhacker/clubs/cpp-workshop-1/include -I/home/dmhacker/clubs/cpp-workshop-1/test_include   -std=c++11   -std=gnu++11 -o CMakeFiles/tests.dir/test/test_my_vector.cpp.o -c /home/dmhacker/clubs/cpp-workshop-1/test/test_my_vector.cpp",
+  "file": "/home/dmhacker/clubs/cpp-workshop-1/test/test_my_vector.cpp"
+}
+]
