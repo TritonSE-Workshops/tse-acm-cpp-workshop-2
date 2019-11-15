@@ -8,7 +8,7 @@
 namespace acmtse {
 
     // TODO: This class is not thread-safe. Look over what it does and make it thread safe.
-    // HINT: All you need to add are 4 identical lines.
+    // HINT: All you need are 5 lines in total with 4 of them being identical.
     template<class T, int N>
     class my_ring_buffer {
         private:
