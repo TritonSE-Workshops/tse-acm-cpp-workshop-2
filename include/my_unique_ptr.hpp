@@ -15,7 +15,7 @@ namespace acmtse {
             /*
              * Default constructor
              */
-            my_unique_ptr() = default;
+            my_unique_ptr();
 
             /*
              * Explicit constructor, takes in a raw pointer that the
@@ -34,17 +34,22 @@ namespace acmtse {
             ~my_unique_ptr();
 
             /*
-             * Assignment operator (note: rvalue usage).
+             * Move copy constructor
              */
-            my_unique_ptr& operator=(my_unique_ptr&& other) noexcept;
+            my_unique_ptr(my_unique_ptr&& other);
+
+            /*
+             * Move assignment operator
+             */
+            my_unique_ptr& operator=(my_unique_ptr&& other);
 
             /*
              * We wish to delete the compiler-generated copy constructors
              * and assignment operators because a unique pointer should not
              * be copyable or assignable.
              */
-            my_unique_ptr(const my_unique_ptr&); // TODO: Add something here ... 
-            my_unique_ptr& operator=(const my_unique_ptr& other); // TODO: Add something here ... 
+            my_unique_ptr(const my_unique_ptr&) = delete;
+            my_unique_ptr& operator=(const my_unique_ptr& other) = delete;
 
             /*
              * Returns the underlying raw pointer. Already implemented. 
@@ -70,18 +75,26 @@ namespace acmtse {
     };
 
     template <class T>
-    inline my_unique_ptr<T>::my_unique_ptr(T* data) {
-        // TODO: Add implementation of explicit constructor
+    inline my_unique_ptr<T>::my_unique_ptr() : d_data_p(nullptr) {
+    }
+
+    template <class T>
+    inline my_unique_ptr<T>::my_unique_ptr(T* data) : d_data_p(data) {
     }
 
     template <class T>
     inline my_unique_ptr<T>::~my_unique_ptr() {
-        // TODO: Add implementation of destructor
+        delete d_data_p;
     }
 
     template <class T>
-    inline my_unique_ptr<T>& my_unique_ptr<T>::operator=(my_unique_ptr&& other) noexcept {
-        // TODO: Add implementation of rvalue assignment operator 
+    inline my_unique_ptr<T>::my_unique_ptr(my_unique_ptr&& other) {
+        // TODO: Add implementation of move copy constructor
+    }
+
+    template <class T>
+    inline my_unique_ptr<T>& my_unique_ptr<T>::operator=(my_unique_ptr&& other) {
+        // TODO: Add implementation of move assignment operator 
     }
 
     template <class T>
