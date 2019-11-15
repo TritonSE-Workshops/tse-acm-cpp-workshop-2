@@ -44,7 +44,7 @@ namespace acmtse {
              *
              * MUST BE THREAD-SAFE.
              */
-            void pop_front();
+            T pop_front();
 
             /*
              * Push element to the back of the queue. It will become the new tail element.
@@ -83,12 +83,14 @@ namespace acmtse {
     }
 
     template <class T, int N>
-    inline void my_ring_buffer<T, N>::pop_front() {
+    inline T my_ring_buffer<T, N>::pop_front() {
         if (d_sz == 0) {
             throw std::out_of_range("Tried to pop from empty queue");
         }
+        T t = d_ring_p[d_head];
         d_head = (d_head + 1) % N;
         d_sz--;
+        return t;
     }
 
     template <class T, int N>
