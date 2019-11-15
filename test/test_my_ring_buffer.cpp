@@ -6,6 +6,7 @@
 #include <thread>
 #include <unordered_set>
 #include <vector>
+#include <iostream>
 
 using namespace acmtse;
 
@@ -27,12 +28,12 @@ TEST_CASE("Two producers, filling buffer to maximum") {
         prod1.join();
         prod2.join();
         REQUIRE(buf.size() == buf.capacity());
-        std::vector<int> counts(100, 0);
+        std::vector<int> counts(50, 0);
         while (buf.size() > 0) {
             counts[buf.front()]++;
             buf.pop_front();
         }
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 50; i++) {
             REQUIRE(counts[i] == 2);
         }
     }
