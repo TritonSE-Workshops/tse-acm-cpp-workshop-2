@@ -10,8 +10,10 @@
 
 using namespace acmtse;
 
+constexpr int TRIALS = 250; 
+
 TEST_CASE("Two producers, filling buffer to maximum") {
-    for (size_t trial = 0; trial < 1000; trial++) {
+    for (size_t trial = 0; trial < TRIALS; trial++) {
         my_ring_buffer<int, 100> buf;
         std::thread prod1([&buf]() {
             for (int i = 0; i < 50; i++) {
@@ -40,7 +42,7 @@ TEST_CASE("Two producers, filling buffer to maximum") {
 }
 
 TEST_CASE("Two producers, filling buffer with overflow") {
-    for (size_t trial = 0; trial < 1000; trial++) {
+    for (size_t trial = 0; trial < TRIALS; trial++) {
         my_ring_buffer<int, 100> buf;
         std::thread prod1([&buf]() {
             for (int i = 0; i < 100; i++) {
@@ -67,7 +69,7 @@ TEST_CASE("Two producers, filling buffer with overflow") {
 }
 
 TEST_CASE("Two consumers, emptying buffer completely") {
-    for (size_t trial = 0; trial < 1000; trial++) {
+    for (size_t trial = 0; trial < TRIALS; trial++) {
         my_ring_buffer<int, 100> buf;
         for (size_t i = 0; i < 100; i++) {
             buf.push_back(i);
@@ -97,7 +99,7 @@ TEST_CASE("Two consumers, emptying buffer completely") {
 }
 
 TEST_CASE("Two consumers, emptying buffer with overflow") {
-    for (size_t trial = 0; trial < 1000; trial++) {
+    for (size_t trial = 0; trial < TRIALS; trial++) {
         my_ring_buffer<int, 100> buf;
         for (size_t i = 0; i < 100; i++) {
             buf.push_back(i);
@@ -127,7 +129,7 @@ TEST_CASE("Two consumers, emptying buffer with overflow") {
 }
 
 TEST_CASE("One consumer, one producer") {
-    for (size_t trial = 0; trial < 1000; trial++) {
+    for (size_t trial = 0; trial < TRIALS; trial++) {
         my_ring_buffer<int, 100> buf;
         std::unordered_set<int> unused;
         for (size_t i = 0; i < 200; i++) {
@@ -160,6 +162,7 @@ TEST_CASE("One consumer, one producer") {
         REQUIRE(buf.size() == unused.size());
         while (buf.size() > 0) {
             REQUIRE(unused.find(buf.front()) != unused.end());
+            unused.erase(buf.front());
             buf.pop_front();
         }
     }
