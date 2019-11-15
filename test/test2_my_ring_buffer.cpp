@@ -39,26 +39,47 @@ TEST_CASE("Two producers, filling buffer to maximum") {
     }
 }
 
+TEST_CASE("Two producers, filling buffer with overflow") {
+    for (size_t trial = 0; trial < 1000; trial++) {
+        my_ring_buffer<int, 100> buf;
+        std::thread prod1([&buf]() {
+            for (int i = 0; i < 100; i++) {
+                REQUIRE(buf.size() < buf.capacity());
+                buf.push_back(i); 
+            }
+        });
+        std::thread prod2([&buf]() {
+            for (int i = 0; i < 100; i++) {
+                REQUIRE(buf.size() < buf.capacity());
+                buf.push_back(i); 
+            }
+        });
+        prod1.join();
+        prod2.join();
+        REQUIRE(buf.size() == buf.capacity());
+    }
+}
+
 TEST_CASE("Two consumers, emptying buffer completely") {
     for (size_t trial = 0; trial < 1000; trial++) {
         my_ring_buffer<int, 100> buf;
         for (size_t i = 0; i < 100; i++) {
             buf.push_back(i);
         }
-        std::thread prod1([&buf]() {
+        std::thread cmsr1([&buf]() {
             for (int i = 0; i < 50; i++) {
                 REQUIRE(buf.size() > 0);
                 buf.pop_front(); 
             }
         });
-        std::thread prod2([&buf]() {
+        std::thread cmsr2([&buf]() {
             for (int i = 0; i < 50; i++) {
                 REQUIRE(buf.size() > 0);
                 buf.pop_front(); 
             }
         });
-        prod1.join();
-        prod2.join();
+        cmsr1.join();
+        cmsr2.join();
         REQUIRE(buf.size() == 0);
         try {
             buf.pop_front();
