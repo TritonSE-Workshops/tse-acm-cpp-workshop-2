@@ -3,6 +3,7 @@
 #include <my_unique_ptr.hpp>
 
 #include <string>
+#include <thread>
 
 using namespace acmtse;
 
@@ -53,4 +54,41 @@ TEST_CASE("Release gives up raw pointer ownership") {
     REQUIRE(data == ptr.release());
     REQUIRE(ptr.get() == nullptr);
     delete data;
+}
+
+TEST_CASE("No race conditions in unique pointer") {
+    const size_t trials = 1000;
+    const size_t amax = 100;
+    const size_t bmax = 100;
+    for (size_t trial = 0; trial < trials; trial++) {
+        my_unique_ptr<std::string> miracle(new std::string());
+        std::thread frst([&miracle]() {
+            for (int i = 0; i < amax; i++) {
+                miracle->push_back('a');
+            }
+        });
+        std::thread snd([&miracle]() {
+            for (int i = 0; i < bmax; i++) {
+                miracle->push_back('b');
+            }
+        });
+        frst.join();
+        snd.join();
+        REQUIRE(miracle->size() == amax + bmax);
+        size_t acnt = 0;
+        size_t bcnt = 0;
+        for (auto & c : *miracle) {
+            if (c == 'a') {
+                acnt++;
+            }
+            else if (c == 'b') {
+                bcnt++;
+            }
+            else {
+                REQUIRE(false);
+            }
+        }
+        REQUIRE(acnt == amax);
+        REQUIRE(bcnt == bmax);
+    }
 }
