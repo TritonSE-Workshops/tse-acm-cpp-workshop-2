@@ -44,13 +44,11 @@ TEST_CASE("Two producers, filling buffer with overflow") {
         my_ring_buffer<int, 100> buf;
         std::thread prod1([&buf]() {
             for (int i = 0; i < 100; i++) {
-                REQUIRE(buf.size() < buf.capacity());
                 buf.push_back(i); 
             }
         });
         std::thread prod2([&buf]() {
             for (int i = 0; i < 100; i++) {
-                REQUIRE(buf.size() < buf.capacity());
                 buf.push_back(i); 
             }
         });
