@@ -16,6 +16,7 @@ namespace acmtse {
             size_t d_head;
             size_t d_tail;
             size_t d_sz;
+            std::mutex d_mtx;
         public:
             /*
              * Default constructor
@@ -76,6 +77,7 @@ namespace acmtse {
 
     template <class T, int N>
     inline T& my_ring_buffer<T, N>::front() {
+        std::lock_guard<std::mutex> lck(d_mtx);
         if (d_sz == 0) {
             throw std::out_of_range("Tried to get front from empty queue");
         }
@@ -84,6 +86,7 @@ namespace acmtse {
 
     template <class T, int N>
     inline T my_ring_buffer<T, N>::pop_front() {
+        std::lock_guard<std::mutex> lck(d_mtx);
         if (d_sz == 0) {
             throw std::out_of_range("Tried to pop from empty queue");
         }
@@ -95,6 +98,7 @@ namespace acmtse {
 
     template <class T, int N>
     inline void my_ring_buffer<T, N>::push_back(const T& t) {
+        std::lock_guard<std::mutex> lck(d_mtx);
         if (d_sz == N) {
             throw std::out_of_range("Tried to push to full queue");
         }
@@ -105,6 +109,7 @@ namespace acmtse {
 
     template <class T, int N>
     inline size_t my_ring_buffer<T, N>::size() {
+        std::lock_guard<std::mutex> lck(d_mtx);
         return d_sz; 
     }
 

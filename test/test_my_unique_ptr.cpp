@@ -6,11 +6,6 @@
 
 using namespace acmtse;
 
-TEST_CASE("Default constructor returns nullptr") {
-    my_unique_ptr<int> ptr;
-    REQUIRE(ptr.get() == nullptr);
-}
-
 TEST_CASE("Constructor stores pointer correctly") {
     int* data = new int(5);
     my_unique_ptr<int> ptr(data);  
