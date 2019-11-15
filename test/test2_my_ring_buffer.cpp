@@ -44,12 +44,20 @@ TEST_CASE("Two producers, filling buffer with overflow") {
         my_ring_buffer<int, 100> buf;
         std::thread prod1([&buf]() {
             for (int i = 0; i < 100; i++) {
-                buf.push_back(i); 
+                try {
+                    buf.push_back(i); 
+                } catch (std::out_of_range& _) {
+                    break;
+                }
             }
         });
         std::thread prod2([&buf]() {
             for (int i = 0; i < 100; i++) {
-                buf.push_back(i); 
+                try {
+                    buf.push_back(i); 
+                } catch (std::out_of_range& _) {
+                    break;
+                }
             }
         });
         prod1.join();
@@ -85,6 +93,36 @@ TEST_CASE("Two consumers, emptying buffer completely") {
         } catch (std::out_of_range& _) {
             REQUIRE(true);
         }
+    }
+}
+
+TEST_CASE("Two consumers, emptying buffer with overflow") {
+    for (size_t trial = 0; trial < 1000; trial++) {
+        my_ring_buffer<int, 100> buf;
+        for (size_t i = 0; i < 100; i++) {
+            buf.push_back(i);
+        }
+        std::thread cmsr1([&buf]() {
+            for (int i = 0; i < 100; i++) {
+                try {
+                    buf.pop_front(); 
+                } catch (std::out_of_range& _) {
+                    break;
+                }
+            }
+        });
+        std::thread cmsr2([&buf]() {
+            for (int i = 0; i < 100; i++) {
+                try {
+                    buf.pop_front(); 
+                } catch (std::out_of_range& _) {
+                    break;
+                }
+            }
+        });
+        cmsr1.join();
+        cmsr2.join();
+        REQUIRE(buf.size() == 0);
     }
 }
 
