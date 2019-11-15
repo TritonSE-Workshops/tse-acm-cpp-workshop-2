@@ -3,7 +3,6 @@
 
 #include <cstddef>
 #include <algorithm>
-#include <mutex>
 
 namespace acmtse {
 
@@ -12,7 +11,6 @@ namespace acmtse {
     class my_unique_ptr {
         private:
             T* d_data_p;
-            std::mutex d_mtx;
         public:
             /*
              * Default constructor
@@ -61,7 +59,7 @@ namespace acmtse {
             /*
              * Deference operator.
              */
-            T& operator*()  const;
+            T& operator*() const;
 
             /*
              * Releases and returns the underlying raw pointer that this 
