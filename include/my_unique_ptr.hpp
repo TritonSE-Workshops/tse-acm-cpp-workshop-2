@@ -7,12 +7,11 @@
 
 namespace acmtse {
 
-    // Make this work by implementing everything labeled with TODO!
+    // This is the solution! Turn back if you are still working on this!
     template<class T>
     class my_unique_ptr {
         private:
             T* d_data_p;
-            std::mutex d_mtx;
         public:
             /*
              * Default constructor
@@ -45,8 +44,8 @@ namespace acmtse {
              * and assignment operators because a unique pointer should not
              * be copyable or assignable.
              */
-            my_unique_ptr(const my_unique_ptr&); // TODO: Add something here ... 
-            my_unique_ptr& operator=(const my_unique_ptr& other); // TODO: Add something here ... 
+            my_unique_ptr(const my_unique_ptr&) = delete;
+            my_unique_ptr& operator=(const my_unique_ptr& other) = delete;
 
             /*
              * Returns the underlying raw pointer. Already implemented. 
@@ -61,7 +60,7 @@ namespace acmtse {
             /*
              * Deference operator.
              */
-            T& operator*()  const;
+            T& operator*() const;
 
             /*
              * Releases and returns the underlying raw pointer that this 
@@ -72,33 +71,36 @@ namespace acmtse {
     };
 
     template <class T>
-    inline my_unique_ptr<T>::my_unique_ptr(T* data) {
-        // TODO: Add implementation of explicit constructor
+    inline my_unique_ptr<T>::my_unique_ptr(T* data) : d_data_p(data) {
     }
 
     template <class T>
     inline my_unique_ptr<T>::~my_unique_ptr() {
-        // TODO: Add implementation of destructor
+        delete d_data_p;
     }
 
     template <class T>
     inline my_unique_ptr<T>& my_unique_ptr<T>::operator=(my_unique_ptr&& other) noexcept {
-        // TODO: Add implementation of rvalue assignment operator 
+        d_data_p = other.d_data_p;
+        other.d_data_p = nullptr;
+        return *this;
     }
 
     template <class T>
     inline T* my_unique_ptr<T>::operator->() const {
-        // TODO: Add implementation of arrow operator
+        return d_data_p;
     }
 
     template <class T>
     inline T& my_unique_ptr<T>::operator*() const {
-        // TODO: Add implementation of dereference operator 
+        return *d_data_p;
     }
 
     template <class T>
     inline T* my_unique_ptr<T>::release() {
-        // TODO: Add implementation of release
+        T* result = d_data_p;
+        d_data_p = nullptr;
+        return result;
     }
 
     template <class T>
