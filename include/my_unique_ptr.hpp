@@ -15,7 +15,7 @@ namespace acmtse {
             /*
              * Default constructor
              */
-            my_unique_ptr() = default;
+            my_unique_ptr();
 
             /*
              * Explicit constructor, takes in a raw pointer that the
@@ -34,9 +34,14 @@ namespace acmtse {
             ~my_unique_ptr();
 
             /*
-             * Assignment operator (note: rvalue usage).
+             * Move copy constructor
              */
-            my_unique_ptr& operator=(my_unique_ptr&& other) noexcept;
+            my_unique_ptr(my_unique_ptr&& other);
+
+            /*
+             * Move assignment operator
+             */
+            my_unique_ptr& operator=(my_unique_ptr&& other);
 
             /*
              * We wish to delete the compiler-generated copy constructors
@@ -70,6 +75,10 @@ namespace acmtse {
     };
 
     template <class T>
+    inline my_unique_ptr<T>::my_unique_ptr() : d_data_p(nullptr) {
+    }
+
+    template <class T>
     inline my_unique_ptr<T>::my_unique_ptr(T* data) : d_data_p(data) {
     }
 
@@ -79,7 +88,12 @@ namespace acmtse {
     }
 
     template <class T>
-    inline my_unique_ptr<T>& my_unique_ptr<T>::operator=(my_unique_ptr&& other) noexcept {
+    inline my_unique_ptr<T>::my_unique_ptr(my_unique_ptr&& other) : d_data_p(other.d_data_p) {
+        other.d_data_p = nullptr;
+    }
+
+    template <class T>
+    inline my_unique_ptr<T>& my_unique_ptr<T>::operator=(my_unique_ptr&& other) {
         d_data_p = other.d_data_p;
         other.d_data_p = nullptr;
         return *this;

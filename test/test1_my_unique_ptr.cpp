@@ -31,12 +31,21 @@ TEST_CASE("Modifications through arrow operator work correctly") {
     REQUIRE(ptr->length() == 7);
 }
 
-TEST_CASE("Assignment through rvalue works correctly") {
+TEST_CASE("Move assignment works correctly") {
     my_unique_ptr<std::string> ptr1;
     my_unique_ptr<std::string> ptr2;
     ptr1 = my_unique_ptr<std::string>(new std::string("acmtse"));
     ptr1->push_back('1');
     ptr2 = std::move(ptr1);
+    ptr2->push_back('2');
+    REQUIRE(*ptr2 == "acmtse12");
+    REQUIRE(ptr2->length() == 8);
+}
+
+TEST_CASE("Move constructor works correctly") {
+    my_unique_ptr<std::string> ptr1(new std::string("acmtse"));
+    ptr1->push_back('1');
+    my_unique_ptr<std::string> ptr2(std::move(ptr1));
     ptr2->push_back('2');
     REQUIRE(*ptr2 == "acmtse12");
     REQUIRE(ptr2->length() == 8);
